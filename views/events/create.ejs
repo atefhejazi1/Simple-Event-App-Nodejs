@@ -1,0 +1,48 @@
+<%- include('../partials/header.ejs'); %>
+    <%- include('../partials/navbar.ejs'); %>
+
+
+        <div class="container mt-4">
+            <h1>Creact Event</h1>
+            <% if (locals.errors) { %>
+                <% errors.forEach(function(err) { %>
+
+                    <div class="alert alert-danger ">
+                        <%= err.msg %>
+                    </div>
+                    <% }) %>
+                        <% }  %>
+                            <form class="from" action="/events/create" method="post">
+                                <div class="mb-3">
+                                    <label for="title" class="form-label">Event Title</label>
+                              
+                                    <input type="text" name="title" class="form-control" id="title"
+                                        placeholder="Event Title">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="description" class="form-label">Event Description</label>
+                                    <textarea class="form-control" name="description" id="description"
+                                        rows="3"></textarea>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="location" class="form-label">Event location</label>
+                                    <input type="text" name="location" class="form-control" id="location"
+                                        placeholder="Event location">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="date" class="form-label">Event date</label>
+                                    <input type="date" name="date" class="form-control" id="date">
+                                </div>
+                                <!-- <div class="mb-3">
+                    <label for="date" class="form-label">Created At</label>
+                    <input type="date" name="created_at" class="form-control" id="date">
+                </div> -->
+                                <div class="mb-3">
+                                    <input type="submit" name="add_event" class="btn btn-primary" value="Add Event">
+                                </div>
+                            </form>
+        </div>
+
+
+
+        <%- include('../partials/footer.ejs'); %>

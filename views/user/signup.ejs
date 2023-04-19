@@ -1,0 +1,32 @@
+<%- include('../partials/header.ejs'); %>
+    <%- include('../partials/navbar.ejs'); %>
+
+
+        <div class="container mt-4">
+            <h1>signup Page</h1>
+            <form class="from mt-4" action="/user/signup" method="post">
+                <div class="mb-3">
+                    <label for="Email" class="form-label">Email</label>
+                    <input type="text" name="email" class="form-control" id="Email" placeholder="Email">
+                </div>
+
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" name="password" class="form-control" id="password" placeholder="Password">
+                </div>
+
+                <div class="mb-3">
+                    <label for="confirm_password" class="form-label">Confirm Password</label>
+                    <input type="password" name="confirm_password" class="form-control" id="confirm_password"
+                        placeholder="Confirm Password">
+                </div>
+
+                <div class="mb-3">
+                    <input type="submit" name="singUp" class="btn btn-primary" value="SingUp">
+                </div>
+            </form>
+        </div>
+
+
+
+        <%- include('../partials/footer.ejs'); %>
